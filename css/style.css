@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Amatic SC', cursive;
+  background: #fad200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-size: 6vh; }
+  body .text {
+    display: flex;
+    margin-top: 4vh;
+    align-items: center; }
+    body .text h1 {
+      background-color: #ffde2e;
+      padding: 2px 20px;
+      border-radius: 10px;
+      margin-left: 20px; }
+  body .holes {
+    margin-top: 4vh;
+    display: flex;
+    width: 700px;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+    body .holes .hole {
+      background: url("../dirt.svg") center no-repeat;
+      background-size: contain;
+      height: 250px;
+      width: 200px; }
+      body .holes .hole .mole {
+        height: 0;
+        width: 200px;
+        background: url("../mole.svg") center no-repeat;
+        background-size: contain;
+        z-index: -2;
+        transition: all 0.1s;
+        transform: translateY(200%); }
+      body .holes .hole .show {
+        height: 150px;
+        transform: translateY(0%); }

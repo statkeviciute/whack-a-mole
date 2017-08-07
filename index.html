@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Whack a mole</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+  </head>
+  <body onload="show()">
+
+    <div class="text">
+      <h2>WHACK-A-MOLE!</h2>
+      <h1 class="score">0</h1>
+    </div>
+
+    <div class="holes">
+      <div class="hole"> <div class="mole one"></div> </div>
+      <div class="hole"> <div class="mole two"></div> </div>
+      <div class="hole"> <div class="mole three"></div> </div>
+      <div class="hole"> <div class="mole four"></div> </div>
+      <div class="hole"> <div class="mole five"></div> </div>
+      <div class="hole"> <div class="mole six"></div> </div>
+    </div>
+
+    <script>
+      const score = document.querySelector('.score');
+      const moles = [... document.querySelectorAll('.mole')];
+      var countScore = 0;
+
+      function show() {
+        const game = setInterval(function() {
+              var mole = moles[Math.floor(Math.random()*moles.length)];
+                mole.classList.add('show')
+                const showMole = setTimeout(function() {
+                  mole.classList.remove('show')
+                }, Math.random()* (1000 - 200) + 200)
+        }, Math.random()* (1000 - 200) + 200)
+
+
+        moles.forEach(mole => mole.addEventListener('click', function() {
+          countScore ++;
+          score.innerHTML = countScore;
+          mole.classList.remove('show');
+        }));
+      }
+
+
+
+
+    </script>
+
+  </body>
+</html>
